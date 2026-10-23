@@ -23,34 +23,42 @@
 
     <!-- ================= HEADER ================= -->
 
-    <header class="header">
-
+    
+<header class="header">
     <div class="navbar">
 
+        <!-- Logo -->
         <div class="logo">
             <div class="logo-box">
-                <img src="../images/logo.jpg" alt="">
+                <img src="../images/logo2.jpg.PNG" alt="Delmos Logo">
             </div>
-
         </div>
 
+        <!-- Navigation -->
         <nav class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="aboutus.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="industries.html">Industries</a>
-            <a href="technologies.html">Technologies</a>
-            <a href="contact.html">Contact Us</a>
+            <input type="checkbox" id="menu-check">
+
+            <label for="menu-check" class="menu-toggle">
+                ☰
+            </label>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="industries.html">Industries</a>
+                <a href="technologies.html">Technologies</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
         </nav>
 
+        <!-- Request Support Button -->
         <a href="contact.html" class="nav-btn">
             Request Support
         </a>
 
     </div>
-
 </header>
-
 
 
     <!-- ================= HERO SECTION ================= -->
@@ -632,209 +640,88 @@
     <!-- ================= FOOTER ================= -->
 
     <footer class="footer">
-
-        <div class="container footer-grid">
-
-
-            <!-- Company -->
-
-            <div class="footer-about">
-
-                <a href="index.html" class="footer-logo">
-
-                    <span class="logo-mark">
-                        D
-                    </span>
-
-                    <span>
-                        DELMOS <br>
-                        <small>Tech Pvt.Ltd.</small>
-                    </span>
-
-                </a>
-
-
-                <p>
-
-                    Reliable application support, maintenance,
-                    optimization, modernization and technology
-                    services for business-critical applications.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- Quick Links -->
-
-            <div class="footer-column">
-
-                <h4>
-                    Quick Links
-                </h4>
-
-
-                <a href="index.html">
-                    Home
-                </a>
-
-
-                <a href="about.html">
-                    About Us
-                </a>
-
-
-                <a href="services.html">
-                    Services
-                </a>
-
-
-                <a href="industries.html">
-                    Industries
-                </a>
-
-
-                <a href="technologies.html">
-                    Technologies
-                </a>
-
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-
-            <!-- Industries -->
-
-            <div class="footer-column">
-
-                <h4>
-                    Industries
-                </h4>
-
-
-                <a href="industries.html">
-                    Banking
-                </a>
-
-
-                <a href="industries.html">
-                    Healthcare
-                </a>
-
-
-                <a href="industries.html">
-                    Manufacturing
-                </a>
-
-
-                <a href="industries.html">
-                    Retail
-                </a>
-
-
-                <a href="industries.html">
-                    Education
-                </a>
-
-
-                <a href="industries.html">
-                    Logistics
-                </a>
-
-
-                <a href="industries.html">
-                    Construction
-                </a>
-
-
-                <a href="industries.html">
-                    Government
-                </a>
-
-            </div>
-
-
-
-            <!-- Services -->
-
-            <div class="footer-column">
-
-                <h4>
-                    Services
-                </h4>
-
-
-                <a href="services.html">
-                    Application Support
-                </a>
-
-
-                <a href="services.html">
-                    Monitoring
-                </a>
-
-
-                <a href="services.html">
-                    Incident Management
-                </a>
-
-
-                <a href="services.html">
-                    Performance Optimization
-                </a>
-
-
-                <a href="services.html">
-                    Upgrades
-                </a>
-
-
-                <a href="services.html">
-                    Modernization
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Footer Bottom -->
-
-        <div class="container footer-bottom">
+       <div class="footer-container">
+
+        <!-- Company Information -->
+        <div class="footer-column footer-company">
+            <a href="index.html" class="footer-logo">
+                <div class="logo-box">
+                    <img src="../images/logo.jpg" alt="Delmos Consulting logo">
+                </div>
+            </a>
 
             <p>
-                © 2026 Delmos Tech Pvt. Ltd.
-                All Rights Reserved.
+                Delmos Consulting Pvt. Ltd. helps businesses maintain,
+                optimize and modernize their applications through reliable
+                application support and technology services.
             </p>
 
-
-            <div class="footer-links">
-
-                <a href="#">
-                    Privacy Policy
-                </a>
-
-
-                <a href="#">
-                    Terms &amp; Conditions
-                </a>
-
-
-                <a href="#">
-                    Disclaimer
-                </a>
-
-            </div>
-
+            <a href="#" class="linkedin" target="_blank" rel="noopener noreferrer">
+                Connect on LinkedIn <span>→</span>
+            </a>
         </div>
 
-    </footer>
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="industries.html">Industries</a>
+            <a href="technologies.html">Technologies</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <a href="services.html">Application Support</a>
+            <a href="services.html">Application Monitoring</a>
+            <a href="services.html">Incident Management</a>
+            <a href="services.html">Performance Optimization</a>
+            <a href="services.html">Application Upgrades</a>
+            <a href="services.html">Modernization</a>
+        </div>
+
+        <!-- Industries -->
+        <div class="footer-column">
+            <h3>Industries</h3>
+            <a href="industries.html">Banking & Finance</a>
+            <a href="industries.html">Healthcare</a>
+            <a href="industries.html">Manufacturing</a>
+            <a href="industries.html">Retail & E-commerce</a>
+            <a href="industries.html">Education</a>
+            <a href="industries.html">Logistics</a>
+            <a href="industries.html">Government</a>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-column footer-contact">
+            <h3>Get in Touch</h3>
+            <p class="contact-company">Delmos Consulting Pvt. Ltd.</p>
+            <p>Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></p>
+            <p>Phone: <a href="tel:YOUR_PHONE">YOUR_PHONE</a></p>
+            <p>Address: Add your official office address</p>
+            <a href="contact.html" class="footer-contact-link">
+                Contact Our Team →
+            </a>
+        </div>
+
+      </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>
+            © 2026 Delmos Consulting Pvt. Ltd. All rights reserved.
+        </p>
+
+        <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Disclaimer</a>
+        </div>
+    </div>
+</footer>
 
 
 

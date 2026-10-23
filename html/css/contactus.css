@@ -1494,13 +1494,8 @@ header {
 
 .info-card {
 
-
     display: flex;
-
-
     align-items: flex-start;
-
-
     gap: 15px;
 
 }
@@ -1510,39 +1505,12 @@ header {
 
 
     width: 48px;
-
-
     height: 48px;
-
-
     display: flex;
-
-
     align-items: center;
-
-
     justify-content: center;
-
-
     flex-shrink: 0;
-
-
-    background: var(--blue);
-
-
-    color: #FFFFFF;
-
-
-    border-radius: 11px;
-
-
     font-weight: 900;
-
-
-    box-shadow:
-
-
-        0 10px 25px rgba(30, 102, 245, 0.22);
 
 }
 
@@ -3275,7 +3243,7 @@ header {
 }
 
 .footer-column > a:not(.footer-logo):not(.linkedin):not(.footer-contact-link):hover {
-    color: #1e66f5;
+    color: #3a0be4;
     transform: translateX(3px);
 }
 

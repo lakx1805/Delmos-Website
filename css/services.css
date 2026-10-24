@@ -960,13 +960,41 @@ section {
     line-height: 1.75;
 }
 
-.cta-buttons {
+.cta a {
     display: flex;
     align-items: center;
 
     gap: 14px;
 
     margin-top: 30px;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 14px 22px;
+
+    background: var(--color-blue);
+    color: var(--color-white);
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+.light-btn:hover {
+    background: var(--color-blue);
+    color: var(--color-white);
+
+    transform: translateY(-4px);
 }
 
 

@@ -659,52 +659,88 @@ button {
    8. CTA SECTION
    ========================================================= */
 
-.cta-section {
+.cta {
     padding: 90px 6%;
 
-    background: var(--color-navy);
+    color: var(--color-white);
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--color-navy),
+            var(--color-navy-dark)
+        );
 }
 
-.cta-box {
+.cta-inner {
     width: min(1200px, 100%);
     margin: 0 auto;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
-    gap: 45px;
+    gap: 40px;
 }
 
 .cta-content {
-    max-width: 760px;
+    max-width: 850px;
 }
 
-.cta-content .small-title {
-    margin-bottom: 13px;
+.cta .eyebrow {
+    color: var(--color-blue-light);
 }
 
-.cta-content h2 {
-    margin-bottom: 15px;
+.cta h2 {
+    margin-bottom: 20px;
 
     color: var(--color-white);
 
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 700;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 750;
 
     line-height: 1.15;
-    letter-spacing: -1px;
+    letter-spacing: -1.2px;
 }
 
-.cta-content p {
-    max-width: 680px;
+.cta p {
+    color: #b9c7d9;
 
-    color: var(--color-text-light);
-
-    font-size: 15px;
+    font-size: 14.5px;
     line-height: 1.75;
 }
 
+.cta a {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 14px 22px;
+
+    background: var(--color-blue);
+    color: var(--color-white);
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
 
 /* ---------- CTA Button ---------- */
 
@@ -742,22 +778,27 @@ button {
 
 
 /* =========================================================
-   9. FOOTER
+   FOOTER
    ========================================================= */
 
 .footer {
-    padding-top: 65px;
+    width: 100%;
+
+    padding-top: 52px;
 
     background: var(--color-white);
+    color: var(--color-text);
 
     border-top: 1px solid var(--color-border);
 }
 
+
 .footer-container {
-    width: min(1200px, 92%);
+    width: min(1350px, 92%);
+
     margin: 0 auto;
 
-    padding-bottom: 45px;
+    padding-bottom: 28px;
 
     display: grid;
 
@@ -772,130 +813,127 @@ button {
 }
 
 
-/* ---------- Footer Brand ---------- */
-
-.footer-brand {
-    max-width: 300px;
+.footer-company {
+    align-items: flex-start;
 }
+
 
 .footer-logo {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+}
+
+
+.footer-logo .logo-box {
     width: 80px;
-    margin-bottom: 18px;
-}
-
-.footer-brand p {
-    color: var(--color-text-muted);
-
-    font-size: 13px;
-    line-height: 1.8;
+    height: 80px;
 }
 
 
-/* ---------- Footer Columns ---------- */
+.footer-company > p {
+    max-width: 340px;
 
-.footer-column h4 {
-    margin-bottom: 18px;
-
-    color: var(--color-navy);
-
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column li {
-    margin-bottom: 10px;
-}
-
-.footer-column a {
-    color: var(--color-text-muted);
-
-    font-size: 13px;
-
-    transition:
-        color var(--transition);
-}
-
-.footer-column a:hover {
-    color: var(--color-blue);
-}
-
-
-/* ---------- Footer Contact ---------- */
-
-.footer-contact p {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 
     color: var(--color-text-muted);
 
-    font-size: 13px;
+    font-size: 13.5px;
     line-height: 1.7;
 }
 
-.footer-contact a {
-    color: var(--color-text-muted);
+
+.linkedin {
+    color: var(--color-blue);
+
+    font-size: 13px;
+    font-weight: 600;
 
     transition: color var(--transition);
 }
 
-.footer-contact a:hover {
+
+.linkedin:hover {
+    color: var(--color-blue-dark);
+}
+
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.footer-column h3 {
+    margin-bottom: 15px;
+
+    color: var(--color-navy);
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.footer-column > a:not(.footer-logo):not(.linkedin):not(.footer-contact-link) {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--color-text-muted);
+
+    font-size: 13px;
+
+    transition: color var(--transition);
+}
+
+
+.footer-column > a:not(.footer-logo):not(.linkedin):not(.footer-contact-link):hover {
     color: var(--color-blue);
 }
 
 
-/* ---------- Footer Social ---------- */
+.footer-contact p {
+    margin-bottom: 8px;
 
-.footer-social {
-    display: flex;
-    align-items: center;
-    gap: 9px;
+    color: var(--color-text-muted);
 
-    margin-top: 18px;
-}
-
-.footer-social a {
-    width: 34px;
-    height: 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: var(--color-surface);
-    color: var(--color-navy);
-
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
-
-    font-size: 13px;
-
-    transition:
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        transform var(--transition);
-}
-
-.footer-social a:hover {
-    background: var(--color-blue);
-    color: var(--color-white);
-
-    border-color: var(--color-blue);
-
-    transform: translateY(-2px);
+    font-size: 13.5px;
+    line-height: 1.7;
 }
 
 
-/* ---------- Footer Bottom ---------- */
+.footer-contact a {
+    color: var(--color-blue);
+}
+
+
+.footer-contact-link {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: var(--color-blue);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color var(--transition);
+}
+
+
+.footer-contact-link:hover {
+    color: var(--color-blue-dark);
+}
+
 
 .footer-bottom {
-    width: min(1200px, 92%);
+    width: min(1350px, 92%);
+
     margin: 0 auto;
 
-    min-height: 65px;
+    padding: 22px 0;
 
     display: flex;
     align-items: center;
@@ -906,19 +944,23 @@ button {
     border-top: 1px solid var(--color-border);
 }
 
+
 .footer-bottom p {
     color: var(--color-text-muted);
 
     font-size: 12px;
 }
 
-.footer-bottom-links {
+
+.footer-legal {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+
     gap: 20px;
 }
 
-.footer-bottom-links a {
+
+.footer-bottom .footer-legal a {
     color: var(--color-text-muted);
 
     font-size: 12px;
@@ -926,10 +968,10 @@ button {
     transition: color var(--transition);
 }
 
-.footer-bottom-links a:hover {
+
+.footer-bottom .footer-legal a:hover {
     color: var(--color-blue);
 }
-
 
 /* =========================================================
    10. RESPONSIVE — TABLET / SMALL DESKTOP

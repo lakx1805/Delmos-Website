@@ -1,0 +1,2140 @@
+/* =========================================================
+   DELMOS TECH — TECHNOLOGIES
+   Standardized with About Us design system
+   ========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+
+:root {
+    --color-navy: #12233f;
+    --color-navy-dark: #0c1930;
+    --color-navy-hover: #17345e;
+
+    --color-blue: #1e66f5;
+    --color-blue-dark: #1553cc;
+    --color-blue-light: #69a8ff;
+
+    --color-text: #344054;
+    --color-text-muted: #667085;
+    --color-text-soft: #748198;
+
+    --color-border: #e5ebf3;
+    --color-border-blue: #b8cdf8;
+
+    --color-surface: #f6f9fd;
+    --color-surface-blue: #eaf1ff;
+
+    --color-white: #ffffff;
+
+    --radius-sm: 7px;
+    --radius-md: 12px;
+    --radius-lg: 14px;
+    --radius-xl: 18px;
+
+    --shadow-header: 0 4px 20px rgba(18, 35, 63, 0.12);
+    --shadow-card: 0 8px 25px rgba(18, 35, 63, 0.07);
+    --shadow-card-hover: 0 15px 35px rgba(18, 35, 63, 0.10);
+    --shadow-blue: 0 10px 25px rgba(30, 102, 245, 0.25);
+
+    --transition: 0.25s ease;
+    --transition-slow: 0.4s ease;
+}
+
+
+/* =========================================================
+   2. RESET / BASE
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+
+    color: var(--color-navy);
+    background: var(--color-white);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+section {
+    width: 100%;
+}
+
+:focus-visible {
+    outline: 3px solid rgba(30, 102, 245, 0.45);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   3. COMMON CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. HEADER
+   ========================================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+
+    box-shadow: var(--shadow-header);
+}
+
+
+/* =========================================================
+   5. NAVBAR
+   ========================================================= */
+
+.navbar {
+    width: 100%;
+    min-height: 76px;
+
+    padding: 0 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   6. LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.logo-box {
+    width: 80px;
+    height: 80px;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo-box img {
+    width: 110%;
+    height: 130%;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================================================
+   7. NAVIGATION
+   ========================================================= */
+
+.nav-menu {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+
+    white-space: nowrap;
+}
+
+#menu-check {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--color-navy);
+
+    font-size: 13.5px;
+    font-weight: 600;
+
+    letter-spacing: -0.01em;
+
+    transition: color var(--transition);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--color-blue);
+
+    transition: width var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--color-blue);
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   8. REQUEST SUPPORT BUTTON
+   ========================================================= */
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 11px 20px;
+
+    border-radius: var(--radius-sm);
+
+    background: var(--color-blue);
+    color: var(--color-white);
+
+    font-size: 13px;
+    font-weight: 650;
+
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    transition:
+        background var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.nav-btn:hover {
+    background: var(--color-blue-dark);
+    color: var(--color-white);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-blue);
+}
+
+
+/* =========================================================
+   9. MOBILE MENU
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color-navy);
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   10. TECHNOLOGY HERO
+   ========================================================= */
+
+.tech-hero {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--color-navy-dark);
+}
+
+
+/* ---------- Hero Image ---------- */
+
+.tech-hero > img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+
+/* ---------- Hero Overlay ---------- */
+
+.tech-hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 23, 47, 0.94) 0%,
+            rgba(7, 23, 47, 0.78) 42%,
+            rgba(7, 23, 47, 0.45) 72%,
+            rgba(7, 23, 47, 0.12) 100%
+        );
+}
+
+
+/* ---------- Hero Container ---------- */
+
+.tech-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ---------- Hero Content ---------- */
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 760px;
+
+    padding: 75px 0;
+
+    color: var(--color-white);
+}
+
+
+/* ---------- Hero Eyebrow ---------- */
+
+.eyebrow {
+    display: flex;
+
+    margin-bottom: 14px;
+
+    color: #9fc0ff;
+
+    font-size: 11.5px;
+    font-weight: 800;
+
+    line-height: 1.5;
+    letter-spacing: 1.6px;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------- Hero Heading ---------- */
+
+.hero-content h1 {
+    max-width: 760px;
+
+    margin: 0;
+
+    color: var(--color-white);
+
+    font-size: clamp(40px, 4.25vw, 58px);
+    font-weight: 800;
+
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+}
+
+.hero-content h1 span {
+    display: block;
+
+    color: var(--color-blue-light);
+}
+
+
+/* ---------- Hero Description ---------- */
+
+.hero-content > p {
+    max-width: 690px;
+
+    margin-top: 18px;
+
+    color: #f0f4fa;
+
+    font-size: 15px;
+    font-weight: 450;
+
+    line-height: 1.72;
+
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.32);
+}
+
+
+/* =========================================================
+   11. HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 13px;
+
+    margin-top: 28px;
+}
+
+.primary-btn,
+.secondary-btn {
+    min-height: 46px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius-sm);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+/* ---------- Primary ---------- */
+
+.primary-btn {
+    background: var(--color-blue);
+    color: var(--color-white);
+
+    box-shadow:
+        0 8px 22px rgba(30, 102, 245, 0.22);
+}
+
+.primary-btn:hover {
+    background: var(--color-blue-dark);
+    color: var(--color-white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(30, 102, 245, 0.30);
+}
+
+
+/* ---------- Secondary ---------- */
+
+.secondary-btn {
+    background: var(--color-white);
+    color: var(--color-navy);
+
+    border: 1px solid var(--color-white);
+}
+
+.secondary-btn:hover {
+    background: var(--color-surface-blue);
+    color: var(--color-blue-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   12. TECHNOLOGY COVERAGE SECTION
+   ========================================================= */
+
+.technology-section {
+    padding: 78px 0;
+
+    background: var(--color-surface);
+}
+
+
+/* ---------- Section Heading ---------- */
+
+.technology-section .section-heading {
+    width: 100%;
+    max-width: 820px;
+
+    margin: 0 0 45px;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--color-blue);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    line-height: 1.5;
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+.technology-section .section-heading h2 {
+    margin-bottom: 16px;
+
+    color: var(--color-navy);
+
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+
+    line-height: 1.15;
+    letter-spacing: -1.1px;
+}
+
+.technology-section .section-heading p {
+    max-width: 780px;
+
+    color: var(--color-text-muted);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   13. TECHNOLOGY CATEGORY
+   ========================================================= */
+
+.technology-category {
+    width: 100%;
+
+    padding: 45px 0;
+
+    border-top: 1px solid var(--color-border);
+}
+
+.technology-category:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+/* ---------- Category Header ---------- */
+
+.technology-category-header {
+    display: grid;
+
+    grid-template-columns: 54px minmax(0, 1fr);
+
+    align-items: start;
+
+    column-gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.category-number {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: var(--radius-md);
+
+    background: var(--color-navy);
+    color: var(--color-white);
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.category-content {
+    min-width: 0;
+
+    max-width: 900px;
+}
+
+.category-content h3 {
+    margin-bottom: 10px;
+
+    color: var(--color-navy);
+
+    font-size: 26px;
+    font-weight: 800;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   14. TECHNOLOGY BULLETS
+   ========================================================= */
+
+.technology-bullets {
+    margin: 17px 0 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.technology-bullets li {
+    position: relative;
+
+    margin-bottom: 11px;
+
+    padding-left: 21px;
+
+    color: #536174;
+
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.technology-bullets li:last-child {
+    margin-bottom: 0;
+}
+
+.technology-bullets li::before {
+    content: "";
+
+    position: absolute;
+
+    top: 9px;
+    left: 0;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--color-blue);
+}
+
+.technology-bullets strong {
+    color: var(--color-navy);
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   15. TECHNOLOGY CARDS
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   No hard-coded margin-left here.
+   Cards align naturally with the category content.
+*/
+
+.technology-items {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 18px;
+
+    /*
+       54px category number
+       + 25px category gap
+       = 79px alignment offset
+    */
+    margin-left: 79px;
+}
+
+.technology-item {
+    min-width: 0;
+    min-height: 145px;
+
+    padding: 22px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    text-align: center;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-top: 3px solid #dce5f3;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.technology-item:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-card-hover);
+}
+
+.technology-item i {
+    display: block;
+
+    font-size: 52px;
+    line-height: 1;
+
+    transition: transform var(--transition);
+}
+
+.technology-item:hover i {
+    transform: scale(1.08);
+}
+
+.technology-item span {
+    color: var(--color-navy);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   16. TEXT LOGOS
+   ========================================================= */
+
+.text-logo {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius-md);
+
+    background: #eef4ff;
+    color: var(--color-blue);
+
+    font-size: 15px;
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+
+    transition: transform var(--transition);
+}
+
+.technology-item:hover .text-logo {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   17. TECHNOLOGY CARD ACCENTS
+   ========================================================= */
+
+.technology-item.html {
+    border-top-color: #e34f26;
+}
+
+.technology-item.css {
+    border-top-color: #1572b6;
+}
+
+.technology-item.javascript {
+    border-top-color: #f7df1e;
+}
+
+.technology-item.react {
+    border-top-color: #61dafb;
+}
+
+.technology-item.angular {
+    border-top-color: #dd0031;
+}
+
+.technology-item.java {
+    border-top-color: #e76f00;
+}
+
+.technology-item.python {
+    border-top-color: #3776ab;
+}
+
+.technology-item.dotnet {
+    border-top-color: #512bd4;
+}
+
+.technology-item.php {
+    border-top-color: #777bb4;
+}
+
+.technology-item.node {
+    border-top-color: #339933;
+}
+
+.technology-item.oracle {
+    border-top-color: #f80000;
+}
+
+.technology-item.sqlserver {
+    border-top-color: #cc2927;
+}
+
+.technology-item.mysql {
+    border-top-color: #4479a1;
+}
+
+.technology-item.postgresql {
+    border-top-color: #336791;
+}
+
+.technology-item.mongodb {
+    border-top-color: #47a248;
+}
+
+.technology-item.aws {
+    border-top-color: #ff9900;
+}
+
+.technology-item.azure {
+    border-top-color: #0078d4;
+}
+
+.technology-item.googlecloud {
+    border-top-color: #4285f4;
+}
+
+.technology-item.docker {
+    border-top-color: #2496ed;
+}
+
+.technology-item.kubernetes {
+    border-top-color: #326ce5;
+}
+
+
+/* =========================================================
+   18. SUPPORT ENVIRONMENT
+   ========================================================= */
+
+.environment-section {
+    padding: 78px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7faff,
+            #eef5ff
+        );
+}
+
+.environment-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 55px;
+}
+
+
+/* ---------- Environment Heading ---------- */
+
+.environment-section h2 {
+    color: var(--color-navy);
+
+    font-size: clamp(30px, 3.5vw, 43px);
+    font-weight: 800;
+
+    line-height: 1.17;
+    letter-spacing: -1px;
+}
+
+.environment-section h2 span {
+    color: var(--color-blue);
+}
+
+.environment-section p {
+    margin-top: 18px;
+
+    color: var(--color-text-muted);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   19. SUPPORT POINTS
+   ========================================================= */
+
+.support-points {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 27px;
+}
+
+.support-points div {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px 15px;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 9px;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.support-points div:hover {
+    transform: translateX(4px);
+
+    box-shadow: var(--shadow-card);
+}
+
+.support-points strong {
+    min-width: 25px;
+
+    color: var(--color-blue);
+
+    font-size: 12px;
+}
+
+.support-points span {
+    color: var(--color-navy);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   20. ENVIRONMENT PANEL
+   ========================================================= */
+
+.environment-panel {
+    min-width: 0;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background: var(--color-navy);
+
+    box-shadow:
+        0 25px 60px rgba(18, 35, 63, 0.20);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    color: #d8e6ff;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.panel-header b {
+    color: #7de5ae;
+
+    font-size: 10px;
+}
+
+.architecture {
+    margin-top: 24px;
+}
+
+.architecture-row {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+.architecture-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        rgba(30, 102, 245, 0.25);
+
+    color: #8db4ff;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.architecture-row strong {
+    display: block;
+
+    color: var(--color-white);
+
+    font-size: 13px;
+}
+
+.architecture-row small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #9caec8;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+.connection-line {
+    width: 1px;
+    height: 18px;
+
+    margin-left: 35px;
+
+    background:
+        rgba(141, 180, 255, 0.35);
+}
+
+
+/* =========================================================
+   21. FINAL CTA
+   ========================================================= */
+
+.final-cta {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 90px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-navy),
+            #174c9a
+        );
+}
+
+.final-cta::after {
+    content: "";
+
+    position: absolute;
+
+    top: -200px;
+    right: -150px;
+
+    width: 400px;
+    height: 400px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+}
+
+.cta-content {
+    position: relative;
+
+    z-index: 1;
+
+    width: min(850px, 100%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.eyebrow.light {
+    color: #9fc0ff;
+}
+
+.cta-content h2 {
+    margin-top: 5px;
+
+    color: var(--color-white);
+
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 800;
+
+    line-height: 1.15;
+    letter-spacing: -1.3px;
+}
+
+.cta-content p {
+    max-width: 680px;
+
+    margin: 17px auto 0;
+
+    color: #c7d5ea;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   22. CTA BUTTONS
+   ========================================================= */
+
+.cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 13px;
+
+    margin-top: 30px;
+}
+
+.btn-white,
+.btn-outline-white {
+    min-height: 46px;
+
+    padding: 0 23px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.btn-white {
+    background: var(--color-white);
+    color: var(--color-navy);
+}
+
+.btn-white:hover {
+    background: #f0f5ff;
+
+    transform: translateY(-2px);
+}
+
+.btn-outline-white {
+    color: var(--color-white);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-outline-white:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color: var(--color-white);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   23. FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    padding-top: 55px;
+
+    background: var(--color-white);
+
+    color: var(--color-text);
+
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-container {
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding-bottom: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.6fr
+        1fr
+        1.25fr
+        1fr
+        1.4fr;
+
+    gap: 35px;
+}
+
+
+/* ---------- Footer Company ---------- */
+
+.footer-company {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+}
+
+.footer-logo .logo-box {
+    width: 75px;
+    height: 75px;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+}
+
+.footer-logo .logo-box img {
+    width: 110%;
+    height: 125%;
+
+    object-fit: contain;
+}
+
+.footer-company > p {
+    max-width: 340px;
+
+    margin-bottom: 18px;
+
+    color: var(--color-text-muted);
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* ---------- LinkedIn ---------- */
+
+.linkedin {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--color-blue);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: color var(--transition);
+}
+
+.linkedin:hover {
+    color: var(--color-blue-dark);
+}
+
+
+/* ---------- Footer Columns ---------- */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.footer-column h3 {
+    margin-bottom: 17px;
+
+    color: var(--color-navy);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+.footer-column > a:not(
+    .footer-logo
+):not(
+    .linkedin
+):not(
+    .footer-contact-link
+) {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--color-text-muted);
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.footer-column > a:not(
+    .footer-logo
+):not(
+    .linkedin
+):not(
+    .footer-contact-link
+):hover {
+    color: var(--color-blue);
+
+    transform: translateX(3px);
+}
+
+
+/* ---------- Footer Contact ---------- */
+
+.footer-contact > p {
+    margin-bottom: 10px;
+
+    color: var(--color-text-muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+.footer-contact .contact-company {
+    color: var(--color-navy);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-contact > p a {
+    color: var(--color-text-muted);
+
+    transition: color var(--transition);
+}
+
+.footer-contact > p a:hover {
+    color: var(--color-blue);
+}
+
+.footer-contact-link {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: var(--color-blue);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: color var(--transition);
+}
+
+.footer-contact-link:hover {
+    color: var(--color-blue-dark);
+}
+
+
+/* ---------- Footer Bottom ---------- */
+
+.footer-bottom {
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding: 20px 0;
+
+    border-top: 1px solid var(--color-border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.footer-legal {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.footer-bottom .footer-legal a {
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+
+    transition: color var(--transition);
+}
+
+.footer-bottom .footer-legal a:hover {
+    color: var(--color-blue);
+}
+
+
+/* =========================================================
+   24. TABLET — 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 24px;
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .technology-items {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        margin-left: 0;
+    }
+
+    .environment-grid {
+        gap: 40px;
+    }
+
+    .footer-container {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .footer-company {
+        grid-column: span 2;
+    }
+}
+
+
+/* =========================================================
+   25. MOBILE NAVIGATION — 850px
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        min-height: 72px;
+        padding: 0 20px;
+    }
+
+    .logo-box {
+        width: 65px;
+        height: 65px;
+    }
+
+    .nav-menu {
+        margin-left: auto;
+
+        flex: 0 0 auto;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px 25px 20px;
+
+        background: var(--color-white);
+
+        box-shadow:
+            0 10px 20px rgba(18, 35, 63, 0.12);
+
+        white-space: normal;
+    }
+
+    #menu-check:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+
+        padding: 14px 5px;
+
+        border-bottom:
+            1px solid var(--color-border);
+
+        font-size: 14px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .tech-hero {
+        min-height: 0;
+        padding: 70px 0;
+    }
+
+    .tech-hero > img {
+        object-position: 65% center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 7vw, 52px);
+    }
+
+    .hero-content > p {
+        max-width: 620px;
+    }
+
+
+    /* ---------- Sections ---------- */
+
+    .technology-section,
+    .environment-section {
+        padding: 70px 0;
+    }
+
+    .technology-category {
+        padding: 40px 0;
+    }
+
+    .technology-category-header {
+        gap: 22px;
+    }
+
+    .environment-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+
+/* =========================================================
+   26. MOBILE — 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo-box {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .tech-hero {
+        padding: 65px 0;
+    }
+
+    .tech-hero > img {
+        object-position: 68% center;
+    }
+
+    .tech-hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(7, 23, 47, 0.97) 0%,
+                rgba(7, 23, 47, 0.88) 58%,
+                rgba(7, 23, 47, 0.62) 100%
+            );
+    }
+
+    .eyebrow {
+        margin-bottom: 13px;
+
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(34px, 8vw, 43px);
+
+        line-height: 1.08;
+        letter-spacing: -1.3px;
+    }
+
+    .hero-content > p {
+        margin-top: 18px;
+
+        font-size: 14px;
+        line-height: 1.72;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 11px;
+
+        margin-top: 25px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+
+        min-height: 46px;
+
+        padding: 0 17px;
+
+        font-size: 12px;
+    }
+
+
+    /* ---------- Technology Section ---------- */
+
+    .technology-section {
+        padding: 65px 0;
+    }
+
+    .technology-section .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .technology-section .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .technology-section .section-heading p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- Categories ---------- */
+
+    .technology-category {
+        padding: 38px 0;
+    }
+
+    .technology-category-header {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        margin-bottom: 27px;
+    }
+
+    .category-number {
+        width: 50px;
+        height: 50px;
+
+        font-size: 15px;
+    }
+
+    .category-content h3 {
+        font-size: 23px;
+    }
+
+    .technology-bullets li {
+        font-size: 13px;
+
+        padding-left: 19px;
+    }
+
+
+    /* ---------- Technology Cards ---------- */
+
+    .technology-items {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+        margin-left: 0;
+    }
+
+    .technology-item {
+        min-height: 125px;
+
+        padding: 18px 10px;
+
+        gap: 11px;
+    }
+
+    .technology-item i {
+        font-size: 43px;
+    }
+
+    .technology-item span {
+        font-size: 12px;
+    }
+
+    .text-logo {
+        width: 48px;
+        height: 48px;
+
+        font-size: 13px;
+    }
+
+
+    /* ---------- Environment ---------- */
+
+    .environment-section {
+        padding: 65px 0;
+    }
+
+    .environment-section h2 {
+        font-size: 31px;
+    }
+
+    .environment-panel {
+        padding: 20px;
+
+        border-radius: 15px;
+    }
+
+    .architecture-row {
+        padding: 11px;
+        gap: 10px;
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .final-cta {
+        padding: 70px 0;
+    }
+
+    .cta-content h2 {
+        font-size: 32px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .cta-content p {
+        font-size: 14px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-white,
+    .btn-outline-white {
+        width: 100%;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    footer {
+        padding-top: 50px;
+    }
+
+    .footer-container {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding-bottom: 35px;
+    }
+
+    .footer-company {
+        grid-column: 1 / -1;
+    }
+
+    .footer-company > p {
+        max-width: 100%;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 14px;
+
+        font-size: 15px;
+    }
+
+    .footer-column > a:not(
+        .footer-logo
+    ):not(
+        .linkedin
+    ):not(
+        .footer-contact-link
+    ) {
+        margin-bottom: 9px;
+
+        font-size: 13px;
+    }
+
+    .footer-bottom {
+        width: 90%;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .footer-legal {
+        gap: 15px;
+    }
+}
+
+
+/* =========================================================
+   27. VERY SMALL SCREENS — 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding-inline: 12px;
+    }
+
+    .logo-box {
+        width: 55px;
+        height: 55px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+
+        font-size: 19px;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .tech-hero {
+        padding: 58px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+
+    /* ---------- Technology ---------- */
+
+    .technology-section {
+        padding: 58px 0;
+    }
+
+    .technology-section .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .technology-item {
+        min-height: 120px;
+    }
+
+    .technology-item i {
+        font-size: 40px;
+    }
+
+    .text-logo {
+        width: 45px;
+        height: 45px;
+
+        font-size: 12px;
+    }
+
+
+    /* ---------- Environment ---------- */
+
+    .environment-section {
+        padding: 58px 0;
+    }
+
+    .environment-section h2 {
+        font-size: 29px;
+    }
+
+    .environment-panel {
+        padding: 17px;
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .final-cta {
+        padding: 60px 0;
+    }
+
+    .cta-content h2 {
+        font-size: 29px;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    .footer-logo .logo-box {
+        width: 65px;
+        height: 65px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+
+        gap: 9px;
+    }
+}
+
+
+/* =========================================================
+   28. VERY SMALL SCREENS — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .navbar {
+        padding-inline: 10px;
+    }
+
+    .tech-hero {
+        padding: 55px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .technology-items {
+        grid-template-columns: 1fr;
+    }
+
+    .technology-item {
+        min-height: 115px;
+    }
+
+    .environment-panel {
+        padding: 14px;
+    }
+}
+
+
+/* =========================================================
+   29. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
